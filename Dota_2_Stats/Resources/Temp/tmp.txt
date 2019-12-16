@@ -1,0 +1,10 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Dota_2_Stats.Resources.Temp
+{
+    class tmp
+    {
+    }
+}

@@ -1,0 +1,113 @@
+
+  [
+    {
+      "id": 0,
+      "name": "unknown",
+      "balanced": true
+    },
+    {
+      "id": 1,
+      "name": "all pick",
+      "balanced": true
+    },
+    {
+      "id": 2,
+      "name": "captains mode",
+      "balanced": true
+    },
+    {
+      "id": 3,
+      "name": "random draft",
+      "balanced": true
+    },
+    {
+      "id": 4,
+      "name": "single draft",
+      "balanced": true
+    },
+    {
+      "id": 5,
+      "name": "all random",
+      "balanced": true
+    },
+    {
+      "id": 6,
+      "name": "intro"
+    },
+    {
+      "id": 7,
+      "name": "diretide"
+    },
+    {
+      "id": 8,
+      "name": "reverse captains mode"
+    },
+    {
+      "id": 9,
+      "name": "greeviling"
+    },
+    {
+      "id": 10,
+      "name": "tutorial"
+    },
+    {
+      "id": 11,
+      "name": "mid only"
+    },
+    {
+      "id": 12,
+      "name": "least played",
+      "balanced": true
+    },
+    {
+      "id": 13,
+      "name": "limited heroes"
+    },
+    {
+      "id": 14,
+      "name": "compendium matchmaking"
+    },
+    {
+      "id": 15,
+      "name": "custom"
+    },
+    {
+      "id": 16,
+      "name": "captains draft",
+      "balanced": true
+    },
+    {
+      "id": 17,
+      "name": "balanced draft",
+      "balanced": true
+    },
+    {
+      "id": 18,
+      "name": "ability draft"
+    },
+    {
+      "id": 19,
+      "name": "event"
+    },
+    {
+      "id": 20,
+      "name": "all random death match"
+    },
+    {
+      "id": 21,
+      "name": "1v1 mid"
+    },
+    {
+      "id": 22,
+      "name": "all draft",
+      "balanced": true
+    },
+    {
+      "id": 23,
+      "name": "turbo"
+    },
+    {
+      "id": 24,
+      "name": "mutation"
+    }
+  ]

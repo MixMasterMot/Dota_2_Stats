@@ -1,0 +1,253 @@
+﻿<Window x:Class="Dota_2_Stats.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dota_2_Stats"
+        xmlns:Converter="clr-namespace:Dota_2_Stats.Converters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="449" Width="659">
+    <Window.Resources>
+        <Color x:Key="RadiantColor">#598307</Color>
+        <Color x:Key="DireColor">#A83806</Color>
+        <SolidColorBrush x:Key="RadiantBrush" Color="{StaticResource RadiantColor}" />
+        <SolidColorBrush x:Key="DireBrush" Color="{StaticResource DireColor}" />
+
+        <Style x:Key="HeaderStyle" TargetType="Control">
+            <Setter Property="Background" Value="Gray"/>
+        </Style>
+
+        <Style x:Key="RowStyle" TargetType="RowDefinition">
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+        <Converter:ImageConverter x:Key="ImageConverter"/>
+        
+    </Window.Resources>
+    <Grid Background="LightCoral">
+        <DockPanel Height="26" LastChildFill="False" VerticalAlignment="Top" Margin="5,5,5,0" Grid.ColumnSpan="3">
+            <Menu IsMainMenu="True" DockPanel.Dock="Top" Background="#FFDA2D2D">
+                <MenuItem Header="Main Menu" Height="26">
+                    <MenuItem Header="test head" Click="MenuItem_Click"/>
+                </MenuItem>
+                <Button x:Name="btnRefresh" Content="Refresh" Click="btnRefresh_Click"/>
+                <ProgressBar x:Name="pbProgress" Width="100"/>
+            </Menu>
+        </DockPanel>
+        <DockPanel LastChildFill="False" Grid.ColumnSpan="3">
+            <Grid x:Name="MasterGrid" Margin="5,30,5,5" Background="Gray" DockPanel.Dock="Top">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                    <RowDefinition Style="{StaticResource RowStyle}"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!-- Faction Colors -->
+                <Border BorderBrush="Pink" BorderThickness="2" Background="Blue" Grid.Column="0" Grid.Row="0" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource RadiantBrush}" Grid.Column="0" Grid.Row="1" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource RadiantBrush}" Grid.Column="0" Grid.Row="2" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource RadiantBrush}" Grid.Column="0" Grid.Row="3" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource RadiantBrush}" Grid.Column="0" Grid.Row="4" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource RadiantBrush}" Grid.Column="0" Grid.Row="5" />
+
+                <Border BorderBrush="Pink" BorderThickness="2" Background="Blue" Grid.Column="0" Grid.Row="6" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource DireBrush}" Grid.Column="0" Grid.Row="7" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource DireBrush}" Grid.Column="0" Grid.Row="8" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource DireBrush}" Grid.Column="0" Grid.Row="9" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource DireBrush}" Grid.Column="0" Grid.Row="10" />
+                <Border BorderBrush="Pink" BorderThickness="2" Background="{StaticResource DireBrush}" Grid.Column="0" Grid.Row="11" />
+                <!-- Faction Colors -->
+
+                <!-- RadiantBrush Headers -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="0">
+                    <Label Content="Radiant Players" Style="{StaticResource HeaderStyle}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Border>
+                <!-- RadiantBrush Headers -->
+
+                <!-- Player [0] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="1">
+                    <Label Margin="0" Foreground="#3074F9" VerticalContentAlignment="Center" x:Name="cunt247"
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[0].Name}" 
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [0] -->
+
+                <!-- Player [1] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="2">
+                    <Label Margin="0" Foreground="#66FFC0" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[1].Name}" 
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [1] -->
+
+                <!-- Player [2] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="3">
+                    <Label Margin="0" Foreground="#BD00B7" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[2].Name}"
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [2] -->
+
+                <!-- Player [3] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="4">
+                    <Label Margin="0" Foreground="#F8F50A" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[3].Name}" 
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [3] -->
+
+                <!-- Player [4] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="5">
+                    <Label Margin="0" Foreground="#FF6901" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[4].Name}" 
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [4] -->
+
+                <!-- RadiantBrush Headers -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="6">
+                    <Label Content="Dire Players" Style="{StaticResource HeaderStyle}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+/>
+                </Border>
+                <!-- RadiantBrush Headers -->
+
+                <!-- Player [0] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="7">
+                    <Label Margin="0" Foreground="#3074F9" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[5].Name}" 
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [0] -->
+
+                <!-- Player [1] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="8">
+                    <Label Margin="0" Foreground="#66FFC0" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[6].Name}" 
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [1] -->
+
+                <!-- Player [2] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="9">
+                    <Label Margin="0" Foreground="#BD00B7" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[7].Name}"
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [2] -->
+
+                <!-- Player [3] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="10">
+                    <Label Margin="0" Foreground="#F8F50A" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[8].Name}" 
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [3] -->
+
+                <!-- Player [4] -->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="2" Grid.Row="11">
+                    <Label Margin="0" Foreground="#FF6901" VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" Content="{Binding Path=[9].Name}" 
+                           MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
+                </Border>
+                <!-- Player [4] -->
+
+                <!--Avatars-->
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="1">
+                    <Image Source="{Binding Path=[0].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="2">
+                    <Image Source="{Binding Path=[1].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="3">
+                    <Image Source="{Binding Path=[2].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="4">
+                    <Image Source="{Binding Path=[3].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="5">
+                    <Image Source="{Binding Path=[4].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="7">
+                    <Image Source="{Binding Path=[5].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="8">
+                    <Image Source="{Binding Path=[6].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="9">
+                    <Image Source="{Binding Path=[7].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="10">
+                    <Image Source="{Binding Path=[8].AvatarPath}"></Image>
+                </Border>
+                <Border BorderBrush="Pink" BorderThickness="2" Grid.Column="1" Grid.Row="11">
+                    <Image Source="{Binding Path=[9].AvatarPath}"></Image>
+                </Border>
+                
+                <ScrollViewer Grid.Column="3" Grid.Row="0" Grid.RowSpan="12"
+                              HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+                              HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" 
+                              Padding="0" Margin="0,0,0,-15">
+                    <Grid x:Name="RecentGamesGrid" Background="AliceBlue">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                            <RowDefinition Style="{StaticResource RowStyle}"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                        </Grid.ColumnDefinitions>
+
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
